@@ -1,9 +1,8 @@
-server:
-    port: 8080
-
 spring:
     application:
         name: adapter-tfoms
+    main:
+        banner-mode: off
     datasource:
         url: jdbc:postgresql://localhost:5432/postgres
         driver-class-name: org.postgresql.Driver
@@ -12,9 +11,11 @@ spring:
     jpa:
         properties:
             hibernate:
-                dialect: org.hibernate.dialect.PostgreSQLDialect
-                jdbc.lob.non_contextual_creation: true
+            dialect: org.hibernate.dialect.PostgreSQLDialect
+            jdbc.lob.non_contextual_creation: true #HHH-12368
         open-in-view: false
     liquibase:
         enabled: true
-        change-log: classpath:db/changelog/master.xml
+        change-log: classpath:src/main/resources/db/changelog/master.xml
+
+
