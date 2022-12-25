@@ -1,0 +1,14 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet id="updateTableRequest" author="Andrey">
+        <update tableName="request">
+            <column name="idrequest">
+                <constraints foreignKeyName="request_studentid_student_studentid" references="student(studentid)"/>
+            </column>
+        </update>
+        <rollback>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>

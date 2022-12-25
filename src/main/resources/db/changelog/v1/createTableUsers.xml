@@ -9,7 +9,9 @@
             <column name="usersid" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="idrole" type="BIGINT"/>
+            <column name="idrole" type="BIGINT">
+                <constraints foreignKeyName="users_usersid_role_idrole" references="role(idrole)"/>
+            </column>
             <column name="name" type="VARCHAR(50)">
                 <constraints nullable="false"/>
             </column>

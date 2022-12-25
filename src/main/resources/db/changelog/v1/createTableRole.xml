@@ -4,12 +4,14 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
 
-    <changeSet id="CreateTableFaculty" author="Andrey">
-        <createTable tableName="faculty">
-            <column name="idfaculty" type="BIGINT">
+    <changeSet id="createTableRole" author="Andrey">
+        <createTable tableName="role">
+            <column name="idrole" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="facultyname" type="VARCHAR(50)"/>
+            <column name="rolename" type="VARCHAR(70)">
+                <constraints nullable="false"/>
+            </column>
         </createTable>
     </changeSet>
 </databaseChangeLog>

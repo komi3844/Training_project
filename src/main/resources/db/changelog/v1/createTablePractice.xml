@@ -9,9 +9,22 @@
             <column name="idpractice" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="userid" type="BIGINT"/>
-            <column name="idgrade" type="BIGINT"/>
+            <column name="userid" type="BIGINT">
+                <constraints foreignKeyName="practice_userid_users_usersid" references="users(usersid)"/>
+            </column>
+            <column name="idgrade" type="BIGINT">
+                <constraints foreignKeyName="practice_userid_grade_idgrade" references="grade(idgrade)"/>
+            </column>
+            <column name="idrequest" type="BIGINT">
+                <constraints foreignKeyName="practice_idrequest_request_idrequest" references="request(idrequest)"/>
+            </column>
+            <column name="studentid" type="BIGINT">
+                <!--<constraints foreignKeyName="practice_idpractice_student_studentid" references="student(studentid)"/>-->
+            </column>
             <column name="direction_practice" type="VARCHAR(100)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="course" type="integer">
                 <constraints nullable="false"/>
             </column>
             <column name="date_start" type="date">

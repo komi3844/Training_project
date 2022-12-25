@@ -10,10 +10,13 @@
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="idpractice" type="BIGINT">
-                <constraints primaryKey="true"/>
+                <constraints foreignKeyName="student_studentid_practice_idpractice" references="practice(idpractice)"/>
             </column>
             <column name="idpfaculty" type="BIGINT">
-                <constraints primaryKey="true" nullable="false"/>
+                <constraints foreignKeyName="student_studentid_faculty_idfaculty" references="faculty(idfaculty)"/>
+            </column>
+            <column name="iduniversity" type="BIGINT">
+                <constraints foreignKeyName="student_studentid_university_iduniversity" references="university(iduniversity)"/>
             </column>
             <column name="name" type="VARCHAR(50)">
                 <constraints nullable="false"/>

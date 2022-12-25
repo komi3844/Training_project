@@ -5,12 +5,16 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
 
     <changeSet id="createTableUniversity" author="Andrey">
-        <createTable tableName="faculty">
+        <createTable tableName="university">
             <column name="iduniversity" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="idfaculty" type="BIGINT"/>
-            <column name="iduniversity" type="BIGINT"/>
+            <column name="idfaculty" type="BIGINT">
+                <constraints foreignKeyName="university_iduniversity_faculty_idfaculty" references="faculty(idfaculty)"/>
+            </column>
+            <column name="idcity" type="BIGINT">
+                <constraints foreignKeyName="university_iduniversity_city_idcity" references="city(idcity)"/>
+            </column>
             <column name="name_university" type="VARCHAR(70)">
                 <constraints nullable="false"/>
             </column>

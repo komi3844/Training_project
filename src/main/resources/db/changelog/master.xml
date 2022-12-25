@@ -5,7 +5,14 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.1.xsd">
 
-        <include file="db/changelog/v01.xml"/>
-        <include file="db/changelog/v01.1.xml"/>
+        <include file="db/changelog/v1/createTableRole.xml"/>
+        <include file="db/changelog/v1/createTableGrade.xml"/>
         <include file="db/changelog/v1/createTableFaculty.xml"/>
+        <include file="db/changelog/v1/createTableCity.xml"/>
+        <include file="db/changelog/v1/createTableUniversity.xml"/>
+        <include file="db/changelog/v1/createTableUsers.xml"/>
+        <include file="db/changelog/v1/createTableRequest.xml"/>
+        <include file="db/changelog/v1/createTablePractice.xml"/>
+        <include file="db/changelog/v1/createTableStudent.xml"/>
+        <include file="db/changelog/update/updateTableRequest.xml"/>
 </databaseChangeLog>

@@ -9,12 +9,16 @@
             <column name="idrequest" type="BIGINT" autoIncrement="true">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
-            <column name="idcity" type="BIGINT"/>
-            <column name="studentid" type="BIGINT"/>
+            <column name="idcity" type="BIGINT">
+                <constraints foreignKeyName="request_idcity_city_idcity" references="city(idcity)"/>
+            </column>
+            <column name="studentid" type="BIGINT">
+                <!--<constraints foreignKeyName="request_studentid_student_studentid" references="student(studentid)"/>-->
+            </column>
             <column name="status" type="VARCHAR(25)">
                 <constraints nullable="false"/>
             </column>
-            <column name="date_application" type="date">
+            <column name="date_application" type="timestamp">
                 <constraints nullable="false"/>
             </column>
         </createTable>
