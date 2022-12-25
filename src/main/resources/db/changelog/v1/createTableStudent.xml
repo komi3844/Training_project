@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+    <changeSet id="createTableStudent" author="Andrey">
+        <createTable tableName="student">
+            <column name="studentid" type="BIGINT" autoIncrement="true">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="idpractice" type="BIGINT">
+                <constraints primaryKey="true"/>
+            </column>
+            <column name="idpfaculty" type="BIGINT">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="name" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="surname" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="middlename" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="birthday" type="date">
+                <constraints nullable="false"/>
+            </column>
+            <column name="gender" type="VARCHAR(1)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone" type="integer">
+            </column>
+            <column name="status" type="VARCHAR(20)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+</databaseChangeLog>
