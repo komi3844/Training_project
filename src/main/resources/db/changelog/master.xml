@@ -15,4 +15,5 @@
         <include file="db/changelog/v1/createTablePractice.xml"/>
         <include file="db/changelog/v1/createTableStudent.xml"/>
         <include file="db/changelog/update/updateTableRequest.xml"/>
+        <include file="db/changelog/insert/InsertCity.xml"/>
 </databaseChangeLog>

@@ -1,0 +1,42 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                                       http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet id="InsertCity" author="Andrey">
+        <insert tableName="city">
+            <column name="name_city" value="Кострома"/>
+        </insert>
+        <insert tableName="city">
+            <column name="name_city" value="Москва"/>
+        </insert>
+        <insert tableName="city">
+            <column name="name_city" value="Ярославль"/>
+        </insert>
+        <insert tableName="city">
+            <column name="name_city" value="Иваново"/>
+        </insert>
+        <insert tableName="city">
+            <column name="name_city" value="Владимир"/>
+        </insert>
+        <insert tableName="city">
+            <column name="name_city" value="Рязань"/>
+        </insert>
+        <insert tableName="city">
+            <column name="name_city" value="Екатеринбург"/>
+        </insert>
+        <insert tableName="city">
+            <column name="name_city" value="Санкт-Петербург"/>
+        </insert>
+        <insert tableName="city">
+            <column name="name_city" value="Казань"/>
+        </insert>
+        <insert tableName="city">
+            <column name="name_city" value="Самара"/>
+        </insert>
+        <insert tableName="city">
+            <column name="name_city" value="Краснодар"/>
+        </insert>
+        <rollback>
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
