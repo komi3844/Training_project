@@ -1,32 +1,25 @@
 package ru.mmtr.training.Training_project.dao.imp;
 
-import ru.mmtr.training.Training_project.config.HibernateUtil;
+
+import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 import ru.mmtr.training.Training_project.dao.StudentDAO;
 import ru.mmtr.training.Training_project.entity.Student;
 
-import java.sql.SQLException;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.List;
 
+
+@Transactional
+@Repository
 public class StudentDAOimp implements StudentDAO {
-
+    @PersistenceContext
+    EntityManager entityManager;
+    @SuppressWarnings("unchecked")
     @Override
-    public void add(Student student) throws SQLException {
-
-    }
-
-    @Override
-    public List<Student> getall() throws SQLException {
-        List<Student> students = (List<Student>) HibernateUtil.getSessionFactory().openSession().createQuery("From Student").list();
-        return students;
-    }
-
-    @Override
-    public void update(Student student) throws SQLException {
-
-    }
-
-    @Override
-    public void remove(Student student) throws SQLException {
-
+    public List<Student> getAllStudent() {
+        String hql = "SELECT st FROM Student st";
+        return (List<Student>) entityManager.createQuery(hql).getResultList();
     }
 }

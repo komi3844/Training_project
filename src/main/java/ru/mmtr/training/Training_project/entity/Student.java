@@ -1,9 +1,6 @@
 package ru.mmtr.training.Training_project.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.Date;
 
@@ -12,17 +9,28 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long studentid;
+    @Column(name = "idpractice")
     private long idpractice;
+    @Column(name = "idpfaculty")
     private long idpfaculty;
+    @Column(name = "iduniversity")
     private long iduniversity;
+    @Column(name = "name")
     private String name;
 
+    @Column(name = "surname")
     private String surname;
+    @Column(name = "middlename")
     private String middlename;
+    @Column(name = "birthday")
     private LocalDate birthday;
+    @Column(name = "idpfaculty")
     private char gender;
+    @Column(name = "phone")
     private int phone;
+    @Column(name = "status")
     private String status;
+
     public long getStudentid() {
         return studentid;
     }
