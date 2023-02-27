@@ -6,4 +6,5 @@ import ru.mmtr.training.Training_project.entity.Student;
 
 public interface StudentDAO {
     List<Student> getAllStudent();
+//    void addStudent(Student student);
 }

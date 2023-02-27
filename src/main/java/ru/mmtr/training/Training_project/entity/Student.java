@@ -9,12 +9,19 @@ public class Student {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long studentid;
-    @Column(name = "idpractice")
-    private long idpractice;
-    @Column(name = "idpfaculty")
-    private long idpfaculty;
-    @Column(name = "iduniversity")
-    private long iduniversity;
+
+    @OneToOne
+    @JoinColumn(name = "idpractice")
+    private Practice practice;
+
+    @OneToOne
+    @JoinColumn(name = "idfaculty")
+    private Faculty faculty;
+
+    @OneToOne
+    @JoinColumn(name = "iduniversity")
+    private University university;
+
     @Column(name = "name")
     private String name;
 
@@ -39,29 +46,22 @@ public class Student {
         this.studentid = studentid;
     }
 
-    public long getIdpractice() {
-        return idpractice;
-    }
 
-    public void setIdpractice(long idpractice) {
-        this.idpractice = idpractice;
-    }
-
-    public long getIdpfaculty() {
-        return idpfaculty;
-    }
-
-    public void setIdpfaculty(long idpfaculty) {
-        this.idpfaculty = idpfaculty;
-    }
-
-    public long getIduniversity() {
-        return iduniversity;
-    }
-
-    public void setIduniversity(long iduniversity) {
-        this.iduniversity = iduniversity;
-    }
+//    public long getIdpfaculty() {
+//        return idpfaculty;
+//    }
+//
+//    public void setIdpfaculty(long idpfaculty) {
+//        this.idpfaculty = idpfaculty;
+//    }
+//
+//    public long getIduniversity() {
+//        return iduniversity;
+//    }
+//
+//    public void setIduniversity(long iduniversity) {
+//        this.iduniversity = iduniversity;
+//    }
 
     public String getName() {
         return name;

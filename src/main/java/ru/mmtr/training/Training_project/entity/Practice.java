@@ -12,6 +12,7 @@ public class Practice {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idpractice;
+
     private long userid;
     private long idgrade;
     private long idrequest;

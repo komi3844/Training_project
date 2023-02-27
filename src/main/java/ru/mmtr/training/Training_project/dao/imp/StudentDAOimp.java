@@ -22,4 +22,9 @@ public class StudentDAOimp implements StudentDAO {
         String hql = "SELECT st FROM Student st";
         return (List<Student>) entityManager.createQuery(hql).getResultList();
     }
+
+//    @Override
+//    public void  addStudent(Student student){
+//        entityManager.persist(student);
+//    }
 }
