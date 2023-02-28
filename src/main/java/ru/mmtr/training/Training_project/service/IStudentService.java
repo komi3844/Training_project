@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface IStudentService {
     List<Student> getAllStudent();
-//    boolean addStudent(Student student);
+    boolean addStudent(Student student);
 }

@@ -10,17 +10,17 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long studentid;
 
-    @OneToOne
-    @JoinColumn(name = "idpractice")
-    private Practice practice;
-
-    @OneToOne
-    @JoinColumn(name = "idfaculty")
-    private Faculty faculty;
-
-    @OneToOne
-    @JoinColumn(name = "iduniversity")
-    private University university;
+//    @OneToOne
+//    @JoinColumn(name = "idpractice")
+//    private Practice practice;
+//
+//    @OneToOne
+//    @JoinColumn(name = "idfaculty")
+//    private Faculty faculty;
+//
+//    @OneToOne
+//    @JoinColumn(name = "iduniversity")
+//    private University university;
 
     @Column(name = "name")
     private String name;
@@ -31,7 +31,7 @@ public class Student {
     private String middlename;
     @Column(name = "birthday")
     private LocalDate birthday;
-    @Column(name = "idpfaculty")
+    @Column(name = "gender")
     private char gender;
     @Column(name = "phone")
     private int phone;
@@ -46,22 +46,6 @@ public class Student {
         this.studentid = studentid;
     }
 
-
-//    public long getIdpfaculty() {
-//        return idpfaculty;
-//    }
-//
-//    public void setIdpfaculty(long idpfaculty) {
-//        this.idpfaculty = idpfaculty;
-//    }
-//
-//    public long getIduniversity() {
-//        return iduniversity;
-//    }
-//
-//    public void setIduniversity(long iduniversity) {
-//        this.iduniversity = iduniversity;
-//    }
 
     public String getName() {
         return name;

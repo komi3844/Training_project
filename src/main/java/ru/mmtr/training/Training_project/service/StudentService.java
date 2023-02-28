@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import ru.mmtr.training.Training_project.dao.StudentDAO;
 import ru.mmtr.training.Training_project.entity.Student;
 
-
 import java.util.List;
 
 @Service
@@ -19,12 +18,15 @@ public class StudentService implements IStudentService {
         return studentDAO.getAllStudent();
     }
 
-//    @Override
-//    public boolean addStudent(Student student) {
-//        return false;
-//
-//        StudentRepository studentRepository = new StudentRepository();
-//        studentRepository.findAll();
-//    }
-
+    @Override
+    public boolean addStudent(Student student) {
+        if (studentDAO.studentExists(student.getStudentid())) {
+            return false;
+        } else {
+            studentDAO.addStudent(student);
+            return true;
+        }
+    }
 }
+
+
