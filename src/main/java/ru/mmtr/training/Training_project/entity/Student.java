@@ -10,9 +10,13 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long studentid;
 
-//    @OneToOne
-//    @JoinColumn(name = "idpractice")
-//    private Practice practice;
+    @OneToOne
+    @JoinColumn(name = "idpractice")
+    private Practice practice;
+
+    @OneToOne
+    private Request request;
+
 //
 //    @OneToOne
 //    @JoinColumn(name = "idfaculty")

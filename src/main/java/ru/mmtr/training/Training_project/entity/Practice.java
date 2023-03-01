@@ -1,10 +1,9 @@
 package ru.mmtr.training.Training_project.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 public class Practice {
@@ -13,10 +12,19 @@ public class Practice {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idpractice;
 
-    private long userid;
-    private long idgrade;
-    private long idrequest;
-    private long studentid;
+    @ManyToMany
+    private List<Users> users = new ArrayList<Users>();
+
+    @OneToOne
+    @JoinColumn(name = "idgrade")
+    private Grade grade;
+
+    @OneToOne
+    @JoinColumn(name = "idrequest")
+    private Request request;
+
+    @OneToOne
+    private Student studentid;
     private String direction_practice;
     private int course;
     private Date date_start;

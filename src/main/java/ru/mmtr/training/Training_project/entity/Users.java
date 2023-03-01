@@ -1,9 +1,8 @@
 package ru.mmtr.training.Training_project.entity;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Users {
@@ -11,7 +10,13 @@ public class Users {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long usersid;
-    private long idrole;
+
+    @ManyToMany
+    private List<Practice> practices = new ArrayList<Practice>();
+
+    @OneToOne
+    @JoinColumn(name = "idrole")
+    private Role role;
 
     private String name;
     private String surname;
