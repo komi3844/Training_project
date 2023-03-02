@@ -13,6 +13,7 @@ public class StudentService implements IStudentService {
     @Autowired
     private StudentDAO studentDAO;
 
+
     @Override
     public List<Student> getAllStudent() {
         return studentDAO.getAllStudent();
@@ -26,6 +27,22 @@ public class StudentService implements IStudentService {
             studentDAO.addStudent(student);
             return true;
         }
+    }
+
+    @Override
+    public Student getStudentById(long studentid) {
+        Student obj = studentDAO.getStudentById(studentid);
+        return obj;
+    }
+
+    @Override
+    public void updateStudent(Student student) {
+        studentDAO.updateStudent(student);
+    }
+
+    @Override
+    public void deleteStudent(long studentid) {
+        studentDAO.deleteStudent(studentid);
     }
 }
 

@@ -2,7 +2,6 @@ package ru.mmtr.training.Training_project.entity;
 
 import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
 @Entity
 public class Student {
@@ -10,18 +9,19 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long studentid;
 
-    @OneToOne
-    @JoinColumn(name = "idpractice")
-    private Practice practice;
-
-    @OneToOne
-    private Request request;
-
+//    @OneToOne
+//    @JoinColumn(name = "idpractice")
+//    private Practice practice;
+//
+//    @OneToOne
+//    @JoinColumn(name = "idrequest")
+//    private Request request;
+//
 //
 //    @OneToOne
 //    @JoinColumn(name = "idfaculty")
 //    private Faculty faculty;
-//
+
 //    @OneToOne
 //    @JoinColumn(name = "iduniversity")
 //    private University university;
@@ -107,5 +107,36 @@ public class Student {
         this.status = status;
     }
 
+//    public Practice getPractice() {
+//        return practice;
+//    }
+//
+//    public void setPractice(Practice practice) {
+//        this.practice = practice;
+//    }
+//
+//    public Request getRequest() {
+//        return request;
+//    }
+//
+//    public void setRequest(Request request) {
+//        this.request = request;
+//    }
+//
+//    public Faculty getFaculty() {
+//        return faculty;
+//    }
+//
+//    public void setFaculty(Faculty faculty) {
+//        this.faculty = faculty;
+//    }
+//
+//    public University getUniversity() {
+//        return university;
+//    }
+//
+//    public void setUniversity(University university) {
+//        this.university = university;
+//    }
 
 }

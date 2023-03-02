@@ -13,4 +13,5 @@ public class Faculty {
     private long idfaculty;
 
     private String facultyname;
+
 }

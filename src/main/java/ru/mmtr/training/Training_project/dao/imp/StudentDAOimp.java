@@ -34,4 +34,25 @@ public class StudentDAOimp implements StudentDAO {
         int count = entityManager.createQuery(hql).setParameter(1, studentid).getResultList().size();
         return count > 0 ? true : false;
     }
+
+    @Override
+    public Student getStudentById(long studentid) {
+        return entityManager.find(Student.class, studentid);
+    }
+
+
+    @Override
+    public void updateStudent(Student student) {
+        Student std = getStudentById(student.getStudentid());
+        std.setSurname(student.getSurname());
+        std.setName(student.getName());
+        std.setMiddlename(student.getMiddlename());
+        entityManager.flush();
+    }
+
+    @Override
+    public void deleteStudent(long studentid) {
+        entityManager.remove(getStudentById(studentid));
+    }
+
 }
