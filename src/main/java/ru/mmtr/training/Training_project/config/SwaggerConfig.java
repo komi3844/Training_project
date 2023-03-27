@@ -1,4 +1,5 @@
 package ru.mmtr.training.Training_project.config;
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,6 +23,11 @@ public class SwaggerConfig {
                 .apis(RequestHandlerSelectors.any())
                 .paths(PathSelectors.any())
                 .build();
+    }
+
+    @Bean
+    public ModelMapper getMapper() {
+        return new ModelMapper();
     }
 
 }

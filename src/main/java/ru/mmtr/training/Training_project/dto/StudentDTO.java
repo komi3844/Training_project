@@ -1,17 +1,31 @@
-package ru.mmtr.training.Training_project.model;
+package ru.mmtr.training.Training_project.dto;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 
-public class StudentModel {
-
-    private String name;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class StudentDTO {
+    private long studentid;
     private String surname;
+    private String name;
     private String middlename;
     private LocalDate birthday;
     private char gender;
     private int phone;
     private String status;
 
+    public long getStudentid() {
+        return studentid;
+    }
+
+    public void setStudentid(long studentid) {
+        this.studentid = studentid;
+    }
 
     public String getName() {
         return name;
@@ -19,14 +33,6 @@ public class StudentModel {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public String getSurname() {
-        return surname;
-    }
-
-    public void setSurname(String surname) {
-        this.surname = surname;
     }
 
     public String getMiddlename() {
@@ -67,5 +73,13 @@ public class StudentModel {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 }

@@ -13,9 +13,10 @@ import java.util.List;
 
 @Transactional
 @Repository
-public class StudentDAOimp implements StudentDAO {
+public class StudentDAOImpl implements StudentDAO {
     @PersistenceContext
     EntityManager entityManager;
+
     @SuppressWarnings("unchecked")
     @Override
     public List<Student> getAllStudent() {
@@ -24,7 +25,7 @@ public class StudentDAOimp implements StudentDAO {
     }
 
     @Override
-    public void  addStudent(Student student){
+    public void addStudent(Student student) {
         entityManager.persist(student);
     }
 

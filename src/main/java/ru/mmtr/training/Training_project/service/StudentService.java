@@ -1,22 +1,29 @@
 package ru.mmtr.training.Training_project.service;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import ru.mmtr.training.Training_project.dao.StudentDAO;
+import ru.mmtr.training.Training_project.dto.StudentDTO;
 import ru.mmtr.training.Training_project.entity.Student;
+import ru.mmtr.training.Training_project.mapper.MapStudent;
+import ru.mmtr.training.Training_project.repository.StudentRepository;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
+@RequiredArgsConstructor
 @Service
 public class StudentService implements IStudentService {
-    @Autowired
-    private StudentDAO studentDAO;
+
+    private final StudentDAO studentDAO;
+    private final MapStudent mapStudent;
+    private final StudentRepository studentRepository;
 
 
     @Override
-    public List<Student> getAllStudent() {
-        return studentDAO.getAllStudent();
+    public List<StudentDTO> getAllStudent() {
+        return studentDAO.getAllStudent().stream().map(mapStudent::map).collect(Collectors.toList()); //mapStudent.mapToStudentModelList(studentDAO.getAllStudent());
     }
 
     @Override
@@ -30,9 +37,8 @@ public class StudentService implements IStudentService {
     }
 
     @Override
-    public Student getStudentById(long studentid) {
-        Student obj = studentDAO.getStudentById(studentid);
-        return obj;
+    public StudentDTO getStudentById(StudentDTO studentId) {
+        return null;//mapStudent.mapToStudentModelById(studentId);
     }
 
     @Override
